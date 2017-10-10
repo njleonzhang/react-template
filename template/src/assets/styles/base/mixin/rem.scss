@@ -1,0 +1,35 @@
+@mixin font-dpr($font-size){
+  font-size: to-upper-case(#{$font-size});
+
+  [data-dpr="2"] & {
+    font-size: to-upper-case(#{$font-size * 2});
+  }
+
+  [data-dpr="3"] & {
+    font-size: to-upper-case(#{$font-size * 3});
+  }
+}
+
+@mixin width-dpr($width){
+  width: $width;
+
+  [data-dpr="2"] & {
+    width: $width * 2;
+  }
+
+  [data-dpr="3"] & {
+    width: $width * 3;
+  }
+}
+
+@mixin dpr($property, $value){
+  #{$property}: $value;
+
+  [data-dpr="2"] & {
+    #{$property}: $value * 2;
+  }
+
+  [data-dpr="3"] & {
+    #{$property}: $value * 3;
+  }
+}

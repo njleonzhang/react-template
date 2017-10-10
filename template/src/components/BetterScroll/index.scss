@@ -1,0 +1,25 @@
+.better-scroll-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  .pulldown-wrapper {
+    position: absolute;
+    @include dpr(top, -60PX);
+    @include dpr(height, 60PX);
+    @include font-dpr(14px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: rgba(0, 0, 0, 0.1);
+    .loading-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .icon-loading {
+        @include dpr(width, 24PX);
+        @include dpr(height, 24PX);
+      }
+    }
+  }
+}

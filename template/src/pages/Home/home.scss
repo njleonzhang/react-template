@@ -1,0 +1,21 @@
+.home-page {
+  width: 100%;
+  min-height: 100%;
+  background: url("../../assets/images/page-bg.png") no-repeat center;
+  background-size: cover;
+  color: white;
+
+  .content {
+    font-size: 40px;
+  }
+
+  .btn {
+    height: 100px;
+    line-height: 100px;
+    margin: 50px 21px 80px;
+    background-color: white;
+    color: #908B87;
+    @include font-dpr(18px);
+    border-radius: 20px;
+  }
+}

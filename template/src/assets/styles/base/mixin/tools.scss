@@ -1,0 +1,10 @@
+@mixin image-icon($name, $width, $image) {
+  .image-icon.icon-#{$name} {
+    width: $width + 0px;
+    height: $width + 0px;
+
+    &::before {
+      background-image: url($image);
+    }
+  }
+}

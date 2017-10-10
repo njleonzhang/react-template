@@ -1,0 +1,13 @@
+.count-down-button {
+  display: block;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  color: $colorPrimary;
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  @include font-dpr(13px);
+  @include setBorderAll($colorPrimary, 10px);
+}

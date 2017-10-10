@@ -1,0 +1,69 @@
+@import "./base/reset";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.container {
+  font-family: Helvetica Neue,Helvetica,
+    Arial,PingFang SC,Hiragino Sans GB,WenQuanYi Micro Hei,
+    Microsoft Yahei,sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background: white;
+}
+
+.image-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  &::before {
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.display-table {
+  display: table;
+}
+
+.table-cell-middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.block-button {
+  width: 100%;
+  height: 90px;
+  background-color: $colorPrimary;
+  @include font-dpr(18px);
+  color: white;
+  border-radius: 10px;
+  font-weight: 200;
+}
+
+@include image-icon(grey-arrow, 32, "../images/grey-arrow.png");

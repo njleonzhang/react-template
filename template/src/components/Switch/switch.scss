@@ -1,0 +1,39 @@
+.zy-switch {
+  .checkbox {
+    position: relative;
+    display: block;
+    width: 75px;
+    height: 45px;
+    border: 1PX solid $lineColorDefault;
+    outline: 0;
+    border-radius: 32px;
+    box-sizing: border-box;
+    background-color: white;
+    appearance: none;
+
+    &:after{
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 32px;
+      height: 32px;
+      margin-top: 5px;
+      margin-left: 5px;
+      border-radius: 50%;
+      background-color: #d2d2d2;
+      transition: transform .35s cubic-bezier(0.4, 0.4, 0.25, 1.35);
+    }
+  }
+
+  .checkbox.checked {
+    &:before {
+      transform: scale(0);
+    }
+
+    &:after {
+      transform: translateX(30px);
+      background: #5eba61;
+    }
+  }
+}

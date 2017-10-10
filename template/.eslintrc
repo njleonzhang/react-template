@@ -1,0 +1,51 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb"],
+  "globals": {
+    "window": false,
+    "React": false,
+    "Component": false,
+    "document": false,
+    "noop": false
+  },
+  "rules": {
+    "react/forbid-prop-types": 0,
+    "import/prefer-default-export": 0,
+    "class-methods-use-this": 0,
+    "no-confusing-arrow": 0,
+    "quote-props": ["error", "consistent-as-needed"],
+    "generator-star-spacing": 0,
+    "space-before-function-paren": [2, 'never'],
+    "semi": [2, "never"],
+    "no-unexpected-multiline": 2,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "no-console": 0,
+    "func-names": 0,
+    "react/prop-types": 0,
+    "no-plusplus": 0,
+    "arrow-parens": 0,
+    "no-unused-vars": [2, { "argsIgnorePattern": "^_" }],
+    "comma-dangle": 0,
+    "react/jsx-wrap-multilines": 0,
+    "no-unused-expressions": 0,
+    "react/no-array-index-key": 0,
+    "global-require": 0,
+    "arrow-body-style": 0,
+    "react/sort-comp": 0,
+    "no-shadow": [2, {"allow": ["_"]}],
+    "jsx-a11y/label-has-for": 0,
+    "react/jsx-max-props-per-line": 0,
+    "react/jsx-first-prop-new-line": 0,
+    "react/jsx-closing-bracket-location": 0,
+    "react/no-multi-comp": 0,
+    "no-script-url": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "no-param-reassign": [2, {
+      "props": false
+    }],
+    "camelcase": 0,
+    "no-nested-ternary": 0
+  }
+}

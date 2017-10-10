@@ -1,0 +1,163 @@
+@mixin androidTopLine($dpr) {
+  @media screen and (-webkit-min-device-pixel-ratio: $dpr) {
+    transform-origin: 0 0;
+    transform: scaleY(1/$dpr);
+  }
+}
+
+@mixin setTopLine($c: $lineColorDefault, $position: relative) {
+  & {
+    position: $position;
+  }
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1PX;
+    border-top: 1PX solid $c;
+  }
+
+  [data-dpr="1"] &:before {
+    @for $i from 2 through 3 {
+      @include androidTopLine($i);
+    }
+  }
+}
+
+@mixin androidBottomLine($dpr) {
+  @media screen and (-webkit-min-device-pixel-ratio: $dpr) {
+    transform-origin: 0 100%;
+    transform: scaleY(1/$dpr);
+  }
+}
+
+@mixin setBottomLine($c: $lineColorDefault, $position: relative) {
+  & {
+    position: $position;
+  }
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1PX;
+    border-bottom: 1PX solid $c;
+    color: $c;
+  }
+
+  [data-dpr="1"] &:before {
+    @for $i from 2 through 3 {
+      @include androidBottomLine($i);
+    }
+  }
+}
+
+@mixin androidLeftLine($dpr) {
+  @media screen and (-webkit-min-device-pixel-ratio: $dpr) {
+    transform-origin: 0 0;
+    transform: scaleX(1/$dpr);
+  }
+}
+
+@mixin setLeftLine($c: $lineColorDefault, $position: relative) {
+  & {
+    position: $position;
+  }
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1PX;
+    bottom: 0;
+    border-left: 1PX solid $c;
+    color: $c;
+  }
+
+  [data-dpr="1"] &:before {
+    @for $i from 2 through 3 {
+      @include androidLeftLine($i);
+    }
+  }
+}
+
+@mixin androidRightLine($dpr) {
+  @media screen and (-webkit-min-device-pixel-ratio: $dpr) {
+    transform-origin: 100% 0;
+    transform: scaleX(1/$dpr);
+  }
+}
+
+@mixin setRightLine($c: $lineColorDefault, $position: relative) {
+  & {
+    position: $position;
+  }
+
+  &:before {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1PX;
+    bottom: 0;
+    border-right: 1PX solid $c;
+    color: $c;
+  }
+
+  [data-dpr="1"] &:before {
+    @for $i from 2 through 3 {
+      @include androidRightLine($i);
+    }
+  }
+}
+
+@mixin androidBorderAll($dpr, $radius) {
+  @media screen and (-webkit-min-device-pixel-ratio: $dpr) {
+    width: $dpr * 100%;
+    height: $dpr * 100%;
+    transform-origin: 0 0;
+    border-radius: $radius * $dpr;
+    transform: scale(1/$dpr);
+  }
+}
+
+@mixin setBorderAll($c: $lineColorDefault, $radius: 0, $position: relative) {
+  & {
+    position: $position;
+  }
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 1PX solid $c;
+    color: $c;
+    border-radius: $radius;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  [data-dpr="1"] &:before {
+    @for $i from 2 through 3 {
+      @include androidBorderAll($i, $radius);
+    }
+  }
+}
+
+@mixin setLineNone() {
+  &:before {
+    width: 0;
+    height: 0;
+  }
+}

@@ -1,0 +1,37 @@
+.login-page {
+  @include image-icon(cellphone, 52, "./images/cellphone.png");
+  @include image-icon(auth-code, 52, "./images/authCode.png");
+
+  .login-form {
+    padding: 0 50px;
+    margin-top: 60px;
+
+    label {
+      display: table;
+      width: 100%;
+      height: 90px;
+      text-align: left;
+      @include setBottomLine();
+    }
+
+    .icon-wrapper {
+      width: 90px;
+    }
+
+    input {
+      width: 100%;
+      color: #333;
+      @include font-dpr(15px);
+      vertical-align: middle;
+
+      &::placeholder {
+        color: #c8c8c8;
+        font-weight: 200;
+      }
+    }
+  }
+
+  .login-button {
+    margin-top: 50px;
+  }
+}
