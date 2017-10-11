@@ -35,11 +35,6 @@ function run(port) {
 
   let app = express()
 
-  config.dev.env.httpBaseUrl = config.dev.env.httpBaseUrl.replace('__PORT_PLACEHOLDER__', port)
-  webpackConfig.plugins.push(new webpack.DefinePlugin({
-    'process.env': config.dev.env
-  }))
-
   let compiler = webpack(webpackConfig)
 
   let devMiddleware = require('webpack-dev-middleware')(compiler, {
