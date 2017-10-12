@@ -27,6 +27,17 @@ exports.cssLoaders = function (options) {
     }
   }
 
+  const sassResourceLoader = {
+    loader: 'sass-resources-loader',
+    options: {
+      resources: [
+        'src/assets/styles/base/variable/**/*.scss',
+        'src/assets/styles/base/mixin/**/*.scss',
+        'src/assets/styles/base/function/**/*.scss'
+      ]
+    }
+  }
+
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
     var loaders = [cssLoader, postcssLoader]
@@ -36,20 +47,6 @@ exports.cssLoaders = function (options) {
         options: Object.assign({}, loaderOptions, {
           sourceMap: options.sourceMap
         })
-      })
-    }
-
-    // sass-resources-loader
-    if (loader == 'sass') {
-      loaders.push({
-        loader: 'sass-resources-loader',
-        options: {
-          resources: [
-            'src/assets/styles/base/variable/**/*.scss',
-            'src/assets/styles/base/mixin/**/*.scss',
-            'src/assets/styles/base/function/**/*.scss'
-          ]
-        }
       })
     }
 
@@ -68,8 +65,8 @@ exports.cssLoaders = function (options) {
   return {
     css: generateLoaders(),
     less: generateLoaders('less'),
-    sass: generateLoaders('sass', { indentedSyntax: true }),
-    scss: generateLoaders('sass'),
+    sass: generateLoaders('sass', { indentedSyntax: true }).concat(sassResourceLoader),
+    scss: generateLoaders('sass').concat(sassResourceLoader),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }
